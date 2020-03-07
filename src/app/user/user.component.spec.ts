@@ -41,4 +41,19 @@ describe('UserComponent', () => {
   it('should render username when logged in', () => {
     expect(element.querySelector('p').textContent).toContain('Please log in');
   });
+
+  it('should be undefined', () => {
+    expect(component.data).toEqual(undefined);
+  });
+
+  it('should have data async', async(() => {
+    const userService: UserService = fixture.debugElement.injector.get(UserService);
+    spyOn(userService, 'getUserData').and.returnValue(Promise.resolve('data'));
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.data).toEqual('data');
+    });
+    expect(component.data).toEqual(undefined);
+  }));
+
 });

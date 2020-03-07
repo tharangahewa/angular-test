@@ -9,4 +9,10 @@ export class UserService {
 
   constructor() {
   }
+
+  getUserData(): Promise<string> {
+    return new Promise<string>(((resolve, reject) => {
+      setTimeout(() => resolve('data'), 2000);
+    }));
+  }
 }

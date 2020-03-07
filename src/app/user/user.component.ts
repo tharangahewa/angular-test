@@ -10,12 +10,17 @@ export class UserComponent implements OnInit {
 
   loggedIn: boolean;
   user: { username: string };
+  data: string;
 
   constructor(private userService: UserService) {
   }
 
   ngOnInit() {
     this.user = this.userService.user;
+    this.userService.getUserData()
+      .then(d => {
+        this.data = d;
+      });
   }
 
 }
