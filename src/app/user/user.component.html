@@ -1,0 +1,8 @@
+<ng-container *ngIf="loggedIn">
+  <h2>User logged in</h2>
+  <p>{{user.username}}</p>
+</ng-container>
+<ng-container *ngIf="!loggedIn">
+  <h2>User not logged in</h2>
+  <p>Please log in</p>
+</ng-container>
