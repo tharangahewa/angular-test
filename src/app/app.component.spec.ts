@@ -34,7 +34,19 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span').textContent)
       .toContain('angular-test app is running!');
-    expect(compiled.querySelector('h2').textContent)
+  });
+
+  it('should have subTitle', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const instance = fixture.debugElement.componentInstance as AppComponent;
+    expect( instance.subTitle).toEqual('Resources');
+  });
+
+  it('should render subTitle', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.sub-title').textContent)
       .toContain('Resources');
   });
 });
