@@ -51,7 +51,7 @@ describe('UserComponent', () => {
     spyOn(userService, 'getUserData').and.returnValue(Promise.resolve('data'));
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(component.data).toEqual('data');
+      expect(component.data).toEqual('data2');
     });
     expect(component.data).toEqual(undefined);
   }));
