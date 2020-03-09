@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/my-project
     docker:
       - image: circleci/node:10-browsers
+    working_directory: ~/my-project
     steps:
       - checkout
       - restore_cache:
