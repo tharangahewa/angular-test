@@ -17,6 +17,6 @@ jobs:
             - "node_modules"
       - run: npm run test-silent
       - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
-      - sonarcloud/scan
+#      - sonarcloud/scan
 
 
